@@ -135,6 +135,8 @@ elseif(WIN32)
   endif()
 
   add_definitions(-D_WINSOCK_DEPRECATED_NO_WARNINGS)
+  add_definitions(-Wno-error)
+  add_definitions(-Wno-unused-local-typedefs)
 else()
   message(FATAL_ERROR "-- Unsupported Build Platform.")
 endif()
