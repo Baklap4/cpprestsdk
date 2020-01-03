@@ -36,7 +36,7 @@
 #include <objbase.h>
 
 #include <windows.h>
-
+#include <winnt.h>
 // Windows Header Files:
 #ifndef __cplusplus_winrt
 #include <winhttp.h>
