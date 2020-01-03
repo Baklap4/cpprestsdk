@@ -74,7 +74,7 @@ struct _file_info_impl : _file_info
 /// <param name="callback">The callback interface pointer</param>
 /// <param name="mode">The C++ file open mode</param>
 /// <returns>The error code if there was an error in file creation.</returns>
-bool _finish_create(int fh, _filestream_callback* callback, std::ios_base::openmode mode, int /* prot */)
+bool _finish_create(int fh, _filestream_callback* callback, std::ios_base::openmode mode, int prot)
 {
     if (fh != -1)
     {
