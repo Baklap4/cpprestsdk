@@ -213,13 +213,13 @@ class task<void>;
 #if defined(__cplusplus_winrt) && !defined(_DEBUG)
 #pragma message(                                                                                                       \
     "WARNING: Redefining PPLX_TASK_SAVE_FRAME_COUNT under Release build for non-desktop applications is not supported; only one frame will be captured!")
-#define PPLX_CAPTURE_CALLSTACK() ::pplx::details::_TaskCreationCallstack::_CaptureSingleFrameCallstack(_ReturnAddress())
+#define PPLX_CAPTURE_CALLSTACK() ::pplx::details::_TaskCreationCallstack::_CaptureSingleFrameCallstack(this->_ReturnAddress())
 #else
 #define PPLX_CAPTURE_CALLSTACK()                                                                                       \
     ::pplx::details::_TaskCreationCallstack::_CaptureMultiFramesCallstack(PPLX_TASK_SAVE_FRAME_COUNT)
 #endif
 #else
-#define PPLX_CAPTURE_CALLSTACK() ::pplx::details::_TaskCreationCallstack::_CaptureSingleFrameCallstack(_ReturnAddress())
+#define PPLX_CAPTURE_CALLSTACK() ::pplx::details::_TaskCreationCallstack::_CaptureSingleFrameCallstack(this->_ReturnAddress())
 #endif
 
 /// <summary>
